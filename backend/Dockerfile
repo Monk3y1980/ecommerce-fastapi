@@ -15,4 +15,4 @@ WORKDIR /src
 # Create empty env-file to avoid warnings
 # RUN touch ./apps/config/.env
 
-CMD ["uvicorn", "main:app", "--host", "127.0.0.1", "--port", "8000", "--reload"]
+CMD ["uvicorn", "main:app", "--reload"]

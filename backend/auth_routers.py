@@ -10,7 +10,7 @@ auth_router = APIRouter(prefix="/auth", tags=["auth"])
 session = Session(bind=engine)
 
 
-@auth_router.post("/signup", status_code=status.HTTP_201_CREATED, response_model=SignUp)
+@auth_router.post("/signup", status_code=status.HTTP_201_CREATED)
 async def signup(user: SignUp):
     email = session.query(User).filter(user.email == User.email).first()
     if email and email is not None:
